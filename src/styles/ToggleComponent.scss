@@ -1,0 +1,28 @@
+@import 'fonts.scss';
+
+@mixin insideAutoLayout($order) {
+    flex: none;
+    order: $order;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.toggle_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    width: 564px;
+    height: 24px;
+    @include insideAutoLayout(4);
+}
+
+.toggle_container_title{
+    width: 524px;
+    height: 24px;
+
+    @include insideAutoLayout(1);
+    @include inputField;
+}

@@ -1,0 +1,105 @@
+@import 'fonts.scss';
+
+@mixin insideAutoLayout($order) {
+    flex: none;
+    order: $order;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.TextInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 564px;
+    height: auto;
+
+    @include insideAutoLayout(1);
+}
+
+.TextInput_Label {
+    width: 564px;
+    height: 18px;
+    @include insideAutoLayout(0);
+    @include inputLabel;
+}
+
+.TextInput_InputField {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+
+    
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    
+    @include insideAutoLayout(1);
+    @include inputField;
+}
+
+.TextInput_InputField.active {
+    border: 2px solid #7A5CFA;
+    border-radius: 8px;
+}
+
+.TextInput_InputField.warning {
+    border: 2px solid #EB5757;
+    border-radius: 8px;
+}
+
+.TextInput_InputField_Text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    @include insideAutoLayout(0)
+}
+
+.TextInput_InputField_Text_Input{
+    width: 304px;
+    height: 24px;
+    border: none;
+    @include inputField;
+    @include insideAutoLayout(0)
+}
+
+.TextInput_InputField_Text_Input:focus {
+    @include inputField;
+    outline: none;
+    color: #333333;
+    
+}
+
+.TextInput_InputField_Text_Icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+}
+
+.TextInput_InputField_Text_Icon.active{
+    width: auto;
+    height: auto;
+}
+
+.TextInput_AssistiveText {
+    width: 564px;
+    height: 18px;
+    @include insideAutoLayout(2);
+    @include inputAssistive;
+
+}
+
+.TextInput_AssistiveText.warning{
+    color: #EB5757;
+}
+
+

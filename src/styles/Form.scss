@@ -1,0 +1,91 @@
+@import 'fonts.scss';
+@mixin insideAutoLayout($order) {
+    flex: none;
+    order: $order;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 32px;
+
+    position: relative;
+    width: 564px;
+    height: 1012px;
+    left: 518px;
+    top: 64px;
+}
+
+.form_bg{
+    position: absolute;
+    width: 760px;
+    height: 1200px;
+    left: 420px;
+    top: 0px;
+    background: #FFFFFF;
+  }
+.radioList {
+    width: 564px;
+    height: 136px;
+    display: flex;
+    flex-direction: column;
+
+    flex: none;
+    order: 5;
+    align-self: stretch;
+    flex-grow: 0; 
+}
+.form_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    padding-top: 16px;
+    gap: 220px;
+
+    width: 564px;
+    height: 56px;
+
+    @include insideAutoLayout(8)
+}
+.form_buttons_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    gap: 10px;
+
+    width: 172px;
+    height: 56px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #7A5CFA;
+    border-radius: 8px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.form_buttons_button.active{
+    background: #7A5CFA;
+    border-radius: 8px;
+}
+
+.form_buttons_button_innerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include buttonField;
+}
+.form_buttons_button_innerText.active{
+    color: #FFFFFF;
+}

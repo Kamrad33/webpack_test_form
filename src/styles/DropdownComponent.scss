@@ -1,0 +1,57 @@
+@import 'fonts.scss';
+@mixin insideAutoLayout($order) {
+    flex: none;
+    order: $order;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.dropdown_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 564px;
+    height: 250px;
+    @include insideAutoLayout(6);
+}
+.dropdown_container_ul {
+    padding: 0px;
+}
+.dropdownItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+
+    width: auto;
+    height: auto;
+
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    @include insideAutoLayout(1)
+}
+
+.dropdownItem.active {
+    background: #7A5CFA;
+}
+
+.dropdownItem_text {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 532px;
+    height: 24px;
+    @include inputField;
+}
+.dropdownItem_text.active {
+    color: #FFFFFF;
+}
